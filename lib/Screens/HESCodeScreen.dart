@@ -13,7 +13,7 @@ class _HESCodeScreenState extends State<HESCodeScreen> {
   DbServices _dbServices;
   final _key = GlobalKey<FormState>();
   final _controlName = TextEditingController();
-  final _controlId = TextEditingController();
+  final _controlhesCode = TextEditingController();
 
   @override
   void initState() {
@@ -64,12 +64,12 @@ class _HESCodeScreenState extends State<HESCodeScreen> {
               ),
               TextFormField(
                 cursorColor: Colors.green,
-                controller: _controlId,
+                controller: _controlhesCode,
                 decoration: InputDecoration(
                   labelText: "HES Code",
                   labelStyle: TextStyle(color: Colors.green),
                 ),
-                onSaved: (val) => setState(() => _hesCode.id = val),
+                onSaved: (val) => setState(() => _hesCode.hescode = val),
                 validator: (val) =>
                     (val.length == 0 ? "This field is required" : null),
               ),
@@ -102,12 +102,20 @@ class _HESCodeScreenState extends State<HESCodeScreen> {
                         fontWeight: FontWeight.bold,
                       ),
                     ),
-                    subtitle: Text(_hesCodes[index].id),
+                    subtitle: Text(_hesCodes[index].hescode),
+                    trailing: IconButton(
+                      icon: Icon(Icons.delete, color: Colors.green),
+                      onPressed: () async {
+                        await _dbServices.deleteHESCode(_hesCodes[index].id);
+                        _resetForm();
+                        _refreshHESCodeList();
+                      },
+                    ),
                     onTap: () {
                       setState(() {
                         _hesCode = _hesCodes[index];
                         _controlName.text = _hesCodes[index].name;
-                        _controlId.text = _hesCodes[index].id;
+                        _controlhesCode.text = _hesCodes[index].hescode;
                       });
                     },
                   ),
@@ -133,9 +141,21 @@ class _HESCodeScreenState extends State<HESCodeScreen> {
     var form = _key.currentState;
     if (form.validate()) {
       form.save();
-      await _dbServices.insertHESCode(_hesCode);
+      if (_hesCode.id == null) {
+        await _dbServices.insertHESCode(_hesCode);
+      } else
+        await _dbServices.updateHESCode(_hesCode);
       _refreshHESCodeList();
-      form.reset();
+      _resetForm();
     }
+  }
+
+  _resetForm() {
+    setState(() {
+      _key.currentState.reset();
+      _controlhesCode.clear();
+      _controlName.clear();
+      _hesCode.id = null;
+    });
   }
 }

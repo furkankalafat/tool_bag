@@ -1,23 +1,28 @@
 class HESCode {
-  static const hesCodeName = "name";
-  static const hesCodeId = "id";
+  static const tblHesCode = "HesCode";
+  static const colid = "id";
+  static const colName = "name";
+  static const colhesCodeId = "hescode";
 
+  int id;
   String name;
-  String id;
+  String hescode;
 
   HESCode({
-    this.name,
     this.id,
+    this.name,
+    this.hescode,
   });
 
   HESCode.fromMap(Map<String, dynamic> map) {
-    name = map[hesCodeName];
-    id = map[hesCodeId];
+    id = map[colid];
+    name = map[colName];
+    hescode = map[colhesCodeId];
   }
 
   Map<String, dynamic> toMap() {
-    var map = <String, dynamic>{hesCodeName: name, hesCodeId: id};
-    if (id != null) map[hesCodeId] = id;
+    var map = <String, dynamic>{colName: name, colhesCodeId: hescode};
+    if (id != null) map[colid] = id;
     return map;
   }
 }

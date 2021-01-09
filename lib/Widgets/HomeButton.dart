@@ -50,7 +50,7 @@ class _HomeButtonState extends State<HomeButton> {
           color: hover ? Colors.green[700] : Colors.green[800],
           borderRadius: BorderRadius.circular(15),
         ),
-        width: 200,
+        width: 150,
         height: 100,
         child: Center(
           child: Text(
