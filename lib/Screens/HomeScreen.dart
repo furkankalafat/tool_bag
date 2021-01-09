@@ -7,14 +7,8 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  bool hover;
-  bool isSwitched;
-  var moonColor;
   @override
   void initState() {
-    hover = false;
-    isSwitched = false;
-    moonColor = Colors.black;
     super.initState();
   }
 
@@ -25,27 +19,7 @@ class _HomeScreenState extends State<HomeScreen> {
         backgroundColor: Colors.green[800],
         title: Center(child: Text('TOOL BAG')),
         actions: [
-          Row(
-            children: [
-              Icon(
-                Icons.brightness_3,
-                size: 20,
-                color: moonColor,
-              ),
-              Switch(
-                value: isSwitched,
-                onChanged: (value) {
-                  setState(() {
-                    isSwitched = true;
-                    moonColor = Colors.white;
-                    print(isSwitched);
-                  });
-                },
-                activeTrackColor: Colors.lightGreenAccent,
-                activeColor: Colors.green,
-              ),
-            ],
-          ),
+          Row(),
         ],
       ),
       body: Container(
