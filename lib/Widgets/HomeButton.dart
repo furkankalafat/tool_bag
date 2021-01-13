@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:my_tool_bag/Screens/Calculator.dart';
 import 'package:my_tool_bag/Screens/HESCodeScreen.dart';
+import 'package:my_tool_bag/Screens/TODOScreen.dart';
 
 // ignore: must_be_immutable
 class HomeButton extends StatefulWidget {
@@ -41,8 +42,8 @@ class _HomeButtonState extends State<HomeButton> {
           Navigator.push(context,
               MaterialPageRoute(builder: (context) => HESCodeScreen()));
         if (widget.menu == 'TODOLIST')
-          Navigator.push(context,
-              MaterialPageRoute(builder: (context) => CalculatorScreen()));
+          Navigator.push(
+              context, MaterialPageRoute(builder: (context) => TODOScreen()));
       },
       borderRadius: BorderRadius.circular(15),
       child: Container(

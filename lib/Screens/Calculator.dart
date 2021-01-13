@@ -31,9 +31,14 @@ class _CalculatorScreenState extends State<CalculatorScreen> {
   Widget build(BuildContext context) {
     //Calculator
     return Scaffold(
-      backgroundColor: Colors.black,
+      backgroundColor: Colors.white,
       appBar: AppBar(
-        backgroundColor: Colors.black,
+        leading: IconButton(
+          color: Colors.white,
+          icon: Icon(Icons.arrow_back_ios),
+          onPressed: () => Navigator.pop(context),
+        ),
+        backgroundColor: Colors.green[800],
       ),
       body: Padding(
         padding: EdgeInsets.symmetric(horizontal: 5),
@@ -52,7 +57,7 @@ class _CalculatorScreenState extends State<CalculatorScreen> {
                       '$text',
                       textAlign: TextAlign.left,
                       style: TextStyle(
-                        color: Colors.white,
+                        color: Colors.black,
                         fontSize: 100,
                       ),
                     ),

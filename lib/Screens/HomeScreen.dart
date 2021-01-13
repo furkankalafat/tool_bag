@@ -19,12 +19,12 @@ class _HomeScreenState extends State<HomeScreen> {
         backgroundColor: Colors.green[800],
         title: Center(child: Text('TOOL BAG')),
         actions: [
-          Row(),
+          //DARK MODE WİLL BE ADD
         ],
       ),
       body: Container(
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -33,11 +33,12 @@ class _HomeScreenState extends State<HomeScreen> {
                 HomeButton(name: 'HES CODE', menu: 'HESCode'),
               ],
             ),
+            SizedBox(height: 30),
             Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 HomeButton(name: 'TO DO LIST', menu: 'TODOLIST'),
-                HomeButton(name: 'name', menu: 'name'),
+                //HomeButton(name: 'name', menu: 'name'),
               ],
             ),
           ],
