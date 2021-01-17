@@ -23,7 +23,6 @@ class DbServicesTask {
   initDb() async {
     Directory directory = await getApplicationDocumentsDirectory();
     String path = join(directory.path, _dbName);
-
     return await openDatabase(path, version: _dbVersion, onCreate: _onCreate);
   }
 

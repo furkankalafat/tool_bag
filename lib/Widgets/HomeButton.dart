@@ -58,6 +58,7 @@ class _HomeButtonState extends State<HomeButton> {
             widget.name,
             style: TextStyle(
               color: Colors.white,
+              fontSize: 16,
             ),
           ),
         ),

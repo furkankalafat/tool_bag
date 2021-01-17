@@ -66,7 +66,7 @@ class _AddTODOState extends State<AddTODO> {
         ),
         backgroundColor: Colors.green[800],
         title: Text(
-          widget.task == null ? 'ADD TASK' : 'UPDATE TASK',
+          widget.task == null ? 'Etkinlik Ekle' : 'Etkinliği Güncelle',
           style: TextStyle(
             color: Colors.white,
           ),
@@ -90,7 +90,7 @@ class _AddTODOState extends State<AddTODO> {
                       initialValue: _title,
                       style: TextStyle(fontSize: 18),
                       decoration: InputDecoration(
-                        labelText: 'Title',
+                        labelText: 'Etkinlik',
                         labelStyle: TextStyle(
                           fontSize: 18,
                         ),
@@ -99,7 +99,9 @@ class _AddTODOState extends State<AddTODO> {
                         ),
                       ),
                       validator: (input) {
-                        return input.isEmpty ? 'Please enter a title' : null;
+                        return input.isEmpty
+                            ? 'Bu alan boş bırakılamaz!'
+                            : null;
                       },
                       onSaved: (input) => _title = input,
                     ),
@@ -131,7 +133,7 @@ class _AddTODOState extends State<AddTODO> {
                       ).toList(),
                       style: TextStyle(fontSize: 18),
                       decoration: InputDecoration(
-                        labelText: 'Priority',
+                        labelText: 'Öncelik',
                         labelStyle: TextStyle(
                           fontSize: 18,
                         ),
@@ -160,7 +162,7 @@ class _AddTODOState extends State<AddTODO> {
                     ),
                     child: FlatButton(
                       child: Text(
-                        widget.task == null ? 'Add' : 'Update',
+                        widget.task == null ? 'Ekle' : 'Güncelle',
                         style: TextStyle(
                           color: Colors.white,
                           fontSize: 20,
@@ -180,7 +182,7 @@ class _AddTODOState extends State<AddTODO> {
                           ),
                           child: FlatButton(
                             child: Text(
-                              'Delete',
+                              'Sil',
                               style: TextStyle(
                                 color: Colors.white,
                                 fontSize: 20,

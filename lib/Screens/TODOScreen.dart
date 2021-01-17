@@ -85,7 +85,7 @@ class _TODOScreenState extends State<TODOScreen> {
           onPressed: () => Navigator.pop(context),
           icon: Icon(Icons.arrow_back_ios),
         ),
-        title: Text("TO DO LIST"),
+        title: Text("Yapılacaklar Listesi"),
         actions: [
           IconButton(
             color: Colors.white,

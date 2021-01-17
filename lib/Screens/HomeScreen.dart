@@ -29,16 +29,15 @@ class _HomeScreenState extends State<HomeScreen> {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                HomeButton(name: 'CALCULATOR', menu: 'Calculator'),
-                HomeButton(name: 'HES CODE', menu: 'HESCode'),
+                HomeButton(name: 'Hesap Makinesi', menu: 'Calculator'),
+                HomeButton(name: 'HES Kod', menu: 'HESCode'),
               ],
             ),
             SizedBox(height: 30),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                HomeButton(name: 'TO DO LIST', menu: 'TODOLIST'),
-                //HomeButton(name: 'name', menu: 'name'),
+                HomeButton(name: 'Yapılacaklar Listesi', menu: 'TODOLIST'),
               ],
             ),
           ],

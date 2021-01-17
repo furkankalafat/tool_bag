@@ -34,7 +34,7 @@ class _HESCodeScreenState extends State<HESCodeScreen> {
           icon: Icon(Icons.arrow_back_ios),
         ),
         backgroundColor: Colors.green[800],
-        title: Text("HES Code"),
+        title: Text("HES Kod"),
       ),
       body: Center(
         child: Column(
@@ -60,28 +60,28 @@ class _HESCodeScreenState extends State<HESCodeScreen> {
                 cursorColor: Colors.green,
                 controller: _controlName,
                 decoration: InputDecoration(
-                  labelText: "Name",
+                  labelText: "İsim",
                   labelStyle: TextStyle(color: Colors.green),
                 ),
                 onSaved: (val) => setState(() => _hesCode.name = val),
                 validator: (val) =>
-                    (val.length == 0 ? "This field is required" : null),
+                    (val.length == 0 ? "Bu alan boş bırakılamaz!" : null),
               ),
               TextFormField(
                 cursorColor: Colors.green,
                 controller: _controlhesCode,
                 decoration: InputDecoration(
-                  labelText: "HES Code",
+                  labelText: "HES Kodu",
                   labelStyle: TextStyle(color: Colors.green),
                 ),
                 onSaved: (val) => setState(() => _hesCode.hescode = val),
                 validator: (val) =>
-                    (val.length == 0 ? "This field is required" : null),
+                    (val.length == 0 ? "Bu alan boş bırakılamaz!" : null),
               ),
               SizedBox(height: 30),
               RaisedButton(
                 onPressed: () => _onSubmit(),
-                child: Text("Submit"),
+                child: Text("Ekle"),
                 color: Colors.green[700],
                 textColor: Colors.white,
               ),

@@ -40,6 +40,9 @@ class _CalculatorScreenState extends State<CalculatorScreen> {
         ),
         backgroundColor: Colors.green[800],
       ),
+
+
+
       body: Padding(
         padding: EdgeInsets.symmetric(horizontal: 5),
         child: Column(
@@ -143,6 +146,7 @@ class _CalculatorScreenState extends State<CalculatorScreen> {
   }
 
   //Calculator logic
+
   dynamic text = '0';
   double numOne = 0;
   double numTwo = 0;
@@ -151,6 +155,7 @@ class _CalculatorScreenState extends State<CalculatorScreen> {
   dynamic finalResult = '';
   dynamic opr = '';
   dynamic preOpr = '';
+  
   calLogic(btnText) {
     if (btnText == 'AC') {
       text = '0';
